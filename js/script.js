@@ -40,17 +40,31 @@ window.addEventListener('scroll', () => {
 const navbarToggle = document.getElementById('navbarToggle');
 const navbarMenu = document.getElementById('navbarMenu');
 
-navbarToggle.addEventListener('click', () => {
-  navbarMenu.classList.toggle('active');
-  navbarToggle.classList.toggle('active');
-});
+if (navbarToggle && navbarMenu) {
+  navbarToggle.addEventListener('click', () => {
+    navbarMenu.classList.toggle('active');
+    navbarToggle.classList.toggle('active');
+    document.body.style.overflow = navbarMenu.classList.contains('active') ? 'hidden' : 'auto';
+  });
+}
 
 // Close menu when a link is clicked
 document.querySelectorAll('.navbar-menu a').forEach(link => {
   link.addEventListener('click', () => {
+    if (navbarMenu && navbarToggle) {
+      navbarMenu.classList.remove('active');
+      navbarToggle.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navbarMenu && navbarToggle) {
     navbarMenu.classList.remove('active');
     navbarToggle.classList.remove('active');
-  });
+    document.body.style.overflow = 'auto';
+  }
 });
 
 // Set active nav link based on current page
@@ -84,6 +98,7 @@ function openRegisterModal(e) {
 }
 
 function closeRegisterModal() {
+  if (!registerModal) return;
   registerModal.classList.remove('active');
   document.body.style.overflow = 'auto';
 }
