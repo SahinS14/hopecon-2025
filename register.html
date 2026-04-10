@@ -220,38 +220,47 @@
     }
 
     .reg-type-card {
-      padding: 14px;
+      padding: 10px 12px;
       border: 2px solid #e8e8e8;
       border-radius: 10px;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
       background: #fafafa;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .reg-type-label {
-      padding-left: 32px;
+      padding-left: 0;
       position: relative;
+      flex: 1;
+    }
+
+    .reg-type-card input {
+      margin-top: 4px;
+      flex: 0 0 auto;
     }
 
     .reg-type-label .title {
       font-weight: 700;
       color: #1a1a1a;
-      font-size: 1rem;
-      margin-bottom: 3px;
+      font-size: 0.95rem;
+      margin-bottom: 2px;
     }
 
     .reg-type-label .price {
       color: #DC143C;
       font-weight: 800;
-      font-size: 1.1rem;
-      margin-bottom: 2px;
+      font-size: 1rem;
+      margin-bottom: 1px;
     }
 
     .reg-type-label .desc {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #999;
-      line-height: 1.4;
+      line-height: 1.25;
     }
 
     /* Checkboxes */
