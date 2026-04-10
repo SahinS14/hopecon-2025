@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - HOPECON 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Clean Contact Page Styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+    }
+
+    section.contact-page {
+      padding: 60px 0;
+    }
+
+    /* Hero Section */
+    .contact-page-hero {
+      background: linear-gradient(135deg, #DC143C 0%, #E74C3C 100%);
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      margin-top: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .contact-page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .contact-page-hero .contact-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-page-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: white;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-page-hero p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .contact-page-hero::before,
+    .contact-page-hero::after {
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .contact-page-hero::after {
+      animation-duration: 10s;
+      animation-direction: reverse;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* Floating Icons */
+    .floating-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.2;
+      animation: float-icon 6s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      font-size: 2.5rem;
+    }
+
+    .floating-icon:nth-child(2) {
+      top: 60%;
+      right: 10%;
+      animation-delay: 1s;
+      font-size: 2.8rem;
+    }
+
+    .floating-icon:nth-child(3) {
+      top: 15%;
+      right: 15%;
+      animation-delay: 2s;
+      font-size: 2.2rem;
+    }
+
+    .floating-icon:nth-child(4) {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 1.5s;
+      font-size: 2.6rem;
+    }
+
+    @keyframes float-icon {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-40px) rotate(10deg);
+      }
+    }
+
+    /* Main Content Container */
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Contact Info Cards Section */
+    .contact-cards-section {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .contact-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid #DC143C;
+      text-align: center;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .contact-card .label {
+      font-size: 0.85rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .contact-card .title {
+      font-size: 1.15rem;
+      color: #1a1a1a;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-card .content {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .contact-card .content a {
+      color: #DC143C;
+      text-decoration: none;
+      font-weight: 700;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card .content a:hover {
+      color: #E74C3C;
+    }
+
+    .contact-card .description {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* Two Column Section */
+    .contact-content-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Contact Form */
+    .contact-form-box {
+      background: #FFD700;
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-title {
+      font-size: 1.8rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .form-subtitle {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #DC143C;
+      box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-submit-btn {
+      background: linear-gradient(135deg, #DC143C, #E74C3C);
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .form-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(220, 20, 60, 0.3);
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 15px;
+    }
+
+    /* Sidebar */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .sidebar-box {
+      background: #FFD700;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar-box h3 {
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .sidebar-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-box li {
+      padding: 10px 0;
+      color: #1a1a1a;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-box li:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-box strong {
+      display: block;
+      font-weight: 700;
+      color: #DC143C;
+      margin-top: 5px;
+    }
+
+    .sidebar-box.red-box {
+      background: linear-gradient(135deg, #DC143C, #E74C3C);
+      color: white;
+    }
+
+    .sidebar-box.red-box h3 {
+      color: white;
+    }
+
+    .sidebar-box.red-box li {
+      color: rgba(255, 255, 255, 0.95);
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar-box.red-box strong {
+      color: #FFD700;
+    }
+
+    .sidebar-box.support-box {
+      background: #E8F5E9;
+      border-left: 4px solid #4CAF50;
+    }
+
+    .sidebar-box.support-box h3 {
+      color: #2E7D32;
+    }
+
+    .sidebar-box.response-box {
+      background: #E3F2FD;
+      border-left: 4px solid #1976D2;
+    }
+
+    .sidebar-box.response-box h3 {
+      color: #1565C0;
+    }
+
+    .sidebar-box.response-box li {
+      color: #1a1a1a;
+    }
+
+    .sidebar-box.response-box strong {
+      color: #1976D2;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .contact-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .contact-form-box {
+        padding: 40px;
+      }
+
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-page-hero {
+        padding: 60px 0;
+        margin-top: 100px;
+      }
+
+      .contact-page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .contact-page-hero p {
+        font-size: 1rem;
+      }
+
+      .contact-card {
+        padding: 30px;
+      }
+
+      .contact-form-box {
+        padding: 30px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .form-title {
+        font-size: 1.5rem;
+      }
+
+      .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      .contact-card .icon {
+        font-size: 2rem;
+      }
+
+      .contact-card .title {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-page-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .contact-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .contact-card {
+        padding: 25px;
+      }
+
+      .contact-card .icon {
+        font-size: 1.8rem;
+      }
+
+      .contact-form-box {
+        padding: 20px;
+      }
+
+      .sidebar-box {
+        padding: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="assets/logos/logo.png" alt="HOPECON">
+        </div>
+        <button class="navbar-toggle" id="navbarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Why Join</a></li>
+          <li><a href="index.html#committee">Committee</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="register.html" class="btn btn-primary btn-sm">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="contact-page-hero">
+    <div class="floating-icons">
+      <div class="floating-icon">☎️</div>
+      <div class="floating-icon">✉️</div>
+      <div class="floating-icon">📍</div>
+      <div class="floating-icon">💬</div>
+    </div>
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <p>Have questions? Reach out to our team. We're ready to assist you.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT INFO CARDS ===== -->
+  <section class="contact-cards-section">
+    <div class="contact-container">
+      <div class="contact-cards-grid">
+        <!-- Phone Card -->
+        <div class="contact-card">
+          <div class="icon">☎️</div>
+          <div class="label">Phone</div>
+          <div class="title">Secretariat Line</div>
+          <div class="content">
+            <a href="tel:+918100881622">+91-8100881622</a>
+          </div>
+          <div class="description">For urgent assistance</div>
+        </div>
+
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="icon">✉️</div>
+          <div class="label">Email</div>
+          <div class="title">Helpdesk Mailbox</div>
+          <div class="content">
+            <a href="mailto:helpdesk@knfunihealth.com">helpdesk@knfunihealth.com</a>
+          </div>
+          <div class="description">For formal enquiries</div>
+        </div>
+
+        <!-- Venue Card -->
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <div class="label">Venue</div>
+          <div class="title">ITC Royal Bengal</div>
+          <div class="content">
+            1, JBS Haldane Avenue<br>Kolkata 700046
+          </div>
+          <div class="description">Conference location</div>
+        </div>
+
+        <!-- Hours Card -->
+        <div class="contact-card">
+          <div class="icon">🕐</div>
+          <div class="label">Hours</div>
+          <div class="title">Monday to Saturday</div>
+          <div class="content">
+            10:00 AM to 6:00 PM IST
+          </div>
+          <div class="description">Business hours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM SECTION ===== -->
+  <section class="contact-page" id="contact-form-section" style="background: #f8f9fa;">
+    <div class="contact-container">
+      <div class="contact-content-wrapper">
+
+        <!-- Form -->
+        <div class="contact-form-box">
+          <h2 class="form-title">Send us a Message</h2>
+          <p class="form-subtitle">We'll respond within 24 business hours</p>
+
+          <form id="contactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name *</label>
+                <input type="text" id="contactName" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address *</label>
+                <input type="email" id="contactEmail" placeholder="john@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" placeholder="+91 9876543210">
+              </div>
+              <div class="form-group">
+                <label for="contactSubject">Subject *</label>
+                <input type="text" id="contactSubject" placeholder="Registration / Sponsorship / Other" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message *</label>
+              <textarea id="contactMessage" placeholder="Please describe your enquiry..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Send Message</button>
+            <p class="form-note">Your information will only be used to respond to your inquiry.</p>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="contact-sidebar">
+          <div class="sidebar-box response-box">
+            <h3>Response Time</h3>
+            <ul>
+              <li>Active Response: <strong>Within 24 Hours</strong></li>
+              <li>Business Days: <strong>Monday to Saturday</strong></li>
+              <li>Working Hours: <strong>10 AM - 6 PM IST</strong></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box support-box">
+            <h3>Support Categories</h3>
+            <ul>
+              <li>✓ Delegate Registration</li>
+              <li>✓ Payment & Invoicing</li>
+              <li>✓ Faculty Coordination</li>
+              <li>✓ Travel Assistance</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTER MODAL ===== -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeRegisterModal()">✕</button>
+      <h2 class="modal-title">Register for HOPECON 2025</h2>
+
+      <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+        <div class="form-group">
+          <label for="regName">Full Name *</label>
+          <input type="text" id="regName" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regEmail">Email *</label>
+            <input type="email" id="regEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Phone *</label>
+            <input type="tel" id="regPhone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regCategory">Registration Type *</label>
+          <select id="regCategory" required>
+            <option value="">-- Select Type --</option>
+            <option value="virtual">Virtual Attendance</option>
+            <option value="physical">Physical Attendance</option>
+            <option value="faculty">Faculty Pass</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="regQualification">Qualification/Specialty</label>
+          <input type="text" id="regQualification" placeholder="e.g., MBBS, MD Cardiology">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Complete Registration</button>
+      </form>
+
+      <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+        You'll receive confirmation via email
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>HOPECON 2025</h4>
+          <p>A comprehensive platform for clinical medicine excellence, featuring 800+ expert faculties, 300+ sessions, and 37+ medical fraternities.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#committee">Committee</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><strong>Phone:</strong> +91-8100881622</p>
+          <p><strong>Email:</strong> helpdesk@knfunihealth.com</p>
+          <p><strong>Location:</strong> ITC Royal Bengal<br>Kolkata, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOPECON. All rights reserved. Organized by Kolkata Nurture Foundation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

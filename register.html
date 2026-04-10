@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - HOPECON 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #f5f7fa;
+    }
+
+    section.register-page {
+      padding: 60px 0;
+    }
+
+    /* Hero Section */
+    .register-page-hero {
+      background: linear-gradient(135deg, #DC143C 0%, #E74C3C 100%);
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      margin-top: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .register-page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .register-page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .register-page-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: white;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .register-page-hero p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Main Container */
+    .register-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Two Column Section */
+    .register-content-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Register Form */
+    .register-form-box {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      border-top: 5px solid #DC143C;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-title {
+      font-size: 1.8rem;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #DC143C, #E74C3C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .form-subtitle {
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .form-section {
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 2px solid #f5f5f5;
+    }
+
+    .form-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .form-section-header {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #FFD700;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 7px;
+      font-size: 0.9rem;
+      text-transform: capitalize;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 2px solid #e8e8e8;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      background: #fafafa;
+      color: #1a1a1a;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-row.full {
+      grid-template-columns: 1fr;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .form-submit-btn {
+      background: linear-gradient(135deg, #DC143C, #E74C3C);
+      color: white;
+      border: none;
+      padding: 13px 40px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin-top: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      box-shadow: 0 8px 25px rgba(220, 20, 60, 0.2);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 12px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Registration Type Cards */
+    .reg-type-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    .reg-type-card {
+      padding: 14px;
+      border: 2px solid #e8e8e8;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      background: #fafafa;
+    }
+
+    .reg-type-label {
+      padding-left: 32px;
+      position: relative;
+    }
+
+    .reg-type-label .title {
+      font-weight: 700;
+      color: #1a1a1a;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .reg-type-label .price {
+      color: #DC143C;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .reg-type-label .desc {
+      font-size: 0.8rem;
+      color: #999;
+      line-height: 1.4;
+    }
+
+    /* Checkboxes */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .checkbox-item label {
+      margin: 0;
+      cursor: pointer;
+      color: #666;
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Sidebar */
+    .register-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      position: relative;
+    }
+
+    .sidebar-image {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      margin-top: 30px;
+    }
+
+    .sidebar-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .sidebar-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar-box h3 {
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .sidebar-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-box li {
+      padding: 12px 0;
+      color: #666;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #f0f0f0;
+      line-height: 1.5;
+    }
+
+    .sidebar-box li:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-box li:before {
+      content: '✓ ';
+      color: #DC143C;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    .sidebar-box.highlight {
+      background: #FFEBEE;
+      border-left: 4px solid #DC143C;
+      color: #1a1a1a;
+    }
+
+    .sidebar-box.highlight h3 {
+      color: #B71C1C;
+    }
+
+    .sidebar-box.highlight li {
+      color: #1a1a1a;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-box.highlight li:before {
+      color: #DC143C;
+    }
+
+    .sidebar-box.yellow {
+      background: #E8F5E9;
+      border-left: 4px solid #4CAF50;
+    }
+
+    .sidebar-box.yellow h3 {
+      color: #2E7D32;
+    }
+
+    .sidebar-box.yellow li {
+      color: #1a1a1a;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-box.yellow li:before {
+      color: #4CAF50;
+    }
+
+    .sidebar-box.blue {
+      background: #E3F2FD;
+      border-left: 4px solid #1976D2;
+    }
+
+    .sidebar-box.blue h3 {
+      color: #1565C0;
+    }
+
+    .sidebar-box.blue li {
+      color: #1a1a1a;
+      border-bottom-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-box.blue li:before {
+      color: #1976D2;
+    }
+
+    /* Success Message */
+    .success-message {
+      background: #10b981;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: none;
+      animation: slideDown 0.4s ease;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .success-message.show {
+      display: block;
+    }
+
+    @keyframes float-icon {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-40px) rotate(10deg);
+      }
+    }
+
+    /* Floating Icons */
+    .floating-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.2;
+      animation: float-icon 6s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      font-size: 2.5rem;
+    }
+
+    .floating-icon:nth-child(2) {
+      top: 60%;
+      right: 10%;
+      animation-delay: 1s;
+      font-size: 2.8rem;
+    }
+
+    .floating-icon:nth-child(3) {
+      top: 15%;
+      right: 15%;
+      animation-delay: 2s;
+      font-size: 2.2rem;
+    }
+
+    .floating-icon:nth-child(4) {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 1.5s;
+      font-size: 2.6rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .register-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .register-form-box {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .register-page-hero {
+        padding: 60px 0;
+        margin-top: 100px;
+      }
+
+      .register-page-hero h1 {
+        font-size: 2rem;
+      }
+
+      .register-page-hero p {
+        font-size: 1rem;
+      }
+
+      .register-form-box {
+        padding: 30px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .form-title {
+        font-size: 1.5rem;
+      }
+
+      .register-sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .register-page-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .register-form-box {
+        padding: 20px;
+      }
+
+      .sidebar-box {
+        padding: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .register-sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="assets/logos/logo.png" alt="HOPECON">
+        </div>
+        <button class="navbar-toggle" id="navbarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Why Join</a></li>
+          <li><a href="index.html#committee">Committee</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html" class="btn btn-primary btn-sm active">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="register-page-hero">
+    <div class="floating-icons">
+      <div class="floating-icon">📝</div>
+      <div class="floating-icon">🩺</div>
+      <div class="floating-icon">🎓</div>
+      <div class="floating-icon">💼</div>
+    </div>
+    <div class="register-container">
+      <h1>Register Now</h1>
+      <p>Secure your spot for HOPECON 2025 - Transform Your Medical Career</p>
+    </div>
+  </section>
+
+  <!-- ===== REGISTRATION FORM SECTION ===== -->
+  <section class="register-page" id="register-form-section" style="background: #f8f9fa;">
+    <div class="register-container">
+      <div class="register-content-wrapper">
+
+        <!-- Form -->
+        <div class="register-form-box">
+          <h2 class="form-title">Complete Your Registration</h2>
+          <p class="form-subtitle">Fill in your details below. Takes just 3 minutes!</p>
+
+          <div class="success-message" id="successMessage">
+            ✓ Registration Successful! Check your email for confirmation.
+          </div>
+
+          <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
+            <!-- Personal Information -->
+            <div class="form-section">
+              <div class="form-section-header">👤 Personal Information</div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-row full">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Mobile Number *</label>
+                  <input type="tel" id="phone" placeholder="+91-XXXXX-XXXXX" required>
+                </div>
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" placeholder="Mumbai" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Details -->
+            <div class="form-section">
+              <div class="form-section-header">🩺 Professional Credentials</div>
+
+              <div class="form-row full">
+                <div class="form-group">
+                  <label for="qualification">Medical Qualification *</label>
+                  <select id="qualification" required>
+                    <option value="">-- Select Your Qualification --</option>
+                    <option value="mbbs">MBBS</option>
+                    <option value="md">MD/MS (Postgraduate)</option>
+                    <option value="diploma">Diploma</option>
+                    <option value="resident">Resident Doctor</option>
+                    <option value="student">Medical Student</option>
+                    <option value="allied">Allied Health Professional</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row full">
+                <div class="form-group">
+                  <label for="specialty">Medical Specialty/Department</label>
+                  <input type="text" id="specialty" placeholder="e.g., Cardiology, Surgery, Medicine">
+                </div>
+              </div>
+
+              <div class="form-row full">
+                <div class="form-group">
+                  <label for="organization">Organization/Hospital *</label>
+                  <input type="text" id="organization" placeholder="Apollo / AIIMS / Max Healthcare" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Registration Type -->
+            <div class="form-section">
+              <div class="form-section-header">🎟️ Select Your Pass *</div>
+
+              <div class="reg-type-cards">
+                <label class="reg-type-card">
+                  <input type="radio" name="registrationType" value="virtual" checked>
+                  <div class="reg-type-label">
+                    <div class="title">🌐 Virtual Attendance</div>
+                    <div class="price">₹2,500</div>
+                    <p class="desc">Zoom access · All sessions · CME credits</p>
+                  </div>
+                </label>
+
+                <label class="reg-type-card">
+                  <input type="radio" name="registrationType" value="physical">
+                  <div class="reg-type-label">
+                    <div class="title">🏢 Physical Attendance</div>
+                    <div class="price">₹4,000</div>
+                    <p class="desc">On-site venue · Meals · Networking</p>
+                  </div>
+                </label>
+
+                <label class="reg-type-card">
+                  <input type="radio" name="registrationType" value="faculty">
+                  <div class="reg-type-label">
+                    <div class="title">⭐ Faculty Pass</div>
+                    <div class="price">₹3,500</div>
+                    <p class="desc">Speaking opportunity · VIP access · All perks</p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Agreement -->
+            <div class="form-section">
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="terms" required>
+                  <label for="terms">I agree to Terms & Conditions and Privacy Policy *</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="marketing" checked>
+                  <label for="marketing">Send me updates about HOPECON and medical conferences</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="form-submit-btn">Complete Registration</button>
+            <p class="form-note">Your information is secure and will only be used for event coordination.</p>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="register-sidebar">
+          <div class="sidebar-box highlight">
+            <h3>Why Register?</h3>
+            <ul>
+              <li>Direct access to 300+ sessions</li>
+              <li>Interact with 800+ expert faculty</li>
+              <li>CME credits (Fully accredited)</li>
+              <li>Networking with medical professionals</li>
+              <li>Certificate of participation</li>
+              <li>Lifetime access to recordings</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box yellow">
+            <h3>Early Bird Offer</h3>
+            <ul>
+              <li>Limited time pricing</li>
+              <li>Seat availability: 4,850</li>
+              <li>Deadline: June 15, 2025</li>
+              <li>Instant confirmation</li>
+              <li>Flexible payment options</li>
+              <li>Money-back guarantee</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box blue">
+            <h3>What's Included</h3>
+            <ul>
+              <li>All conference sessions</li>
+              <li>Expert faculty presentations</li>
+              <li>Interactive workshops</li>
+              <li>Digital materials</li>
+              <li>Conference badge</li>
+              <li>Post-event certificate</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>HOPECON 2025</h4>
+          <p>A comprehensive platform for clinical medicine excellence, featuring 800+ expert faculties, 300+ sessions, and 37+ medical fraternities.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><strong>Phone:</strong> +91-8100881622</p>
+          <p><strong>Email:</strong> helpdesk@knfunihealth.com</p>
+          <p><strong>Location:</strong> ITC Royal Bengal<br>Kolkata, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOPECON. All rights reserved. Organized by Kolkata Nurture Foundation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    function handleRegistrationSubmit(e) {
+      e.preventDefault();
+
+      const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        city: document.getElementById('city').value,
+        qualification: document.getElementById('qualification').value,
+        specialty: document.getElementById('specialty').value,
+        organization: document.getElementById('organization').value,
+        registrationType: document.querySelector('input[name="registrationType"]:checked').value,
+        timestamp: new Date().toISOString()
+      };
+
+      console.log('Registration Data:', formData);
+
+      // Show success message
+      const successMsg = document.getElementById('successMessage');
+      successMsg.classList.add('show');
+
+      // Store in localStorage
+      localStorage.setItem('hopeconRegistration', JSON.stringify(formData));
+
+      // Reset form
+      setTimeout(() => {
+        document.getElementById('registrationForm').reset();
+        successMsg.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

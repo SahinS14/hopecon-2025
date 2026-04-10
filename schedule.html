@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Schedule - HOPECON 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background: #f5f5f5;
+    }
+
+    /* Hero Section */
+    .schedule-hero {
+      background: linear-gradient(135deg, #DC143C 0%, #E74C3C 100%);
+      padding: 80px 0;
+      color: white;
+      text-align: center;
+      margin-top: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .schedule-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .schedule-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      z-index: 1;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    .schedule-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .schedule-hero p {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.95);
+      position: relative;
+      z-index: 2;
+    }
+
+    .schedule-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Schedule Container */
+    .schedule-wrapper {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    /* Schedule Card Layout */
+    .schedule-card-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    /* Left Side - Date & Title */
+    .schedule-left {
+      position: relative;
+      padding: 60px;
+      background: linear-gradient(135deg, #D4A574 0%, #E8B8A5 100%);
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .schedule-left::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .schedule-left::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 350px;
+      height: 350px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .schedule-date {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 40px;
+    }
+
+    .schedule-date-number {
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .schedule-date-month {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .schedule-title {
+      position: relative;
+      z-index: 2;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      display: inline-block;
+      line-height: 1.1;
+    }
+
+    .schedule-description {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    /* Right Side - Schedule Items */
+    .schedule-right {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .schedule-right::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: rgba(220, 20, 60, 0.05);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .schedule-right::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 250px;
+      height: 250px;
+      background: rgba(255, 215, 0, 0.08);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    /* Tab Navigation */
+    .schedule-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tab-btn {
+      background: white;
+      border: 2px solid transparent;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: #FFD700;
+      color: #1a1a1a;
+      border-color: transparent;
+      box-shadow: 0 6px 16px rgba(255, 215, 0, 0.25);
+    }
+
+    .tab-btn:hover:not(.active) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Schedule Items */
+    .schedule-items {
+      position: relative;
+      z-index: 1;
+    }
+
+    .schedule-day {
+      display: none;
+    }
+
+    .schedule-day.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes float-icon {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-40px) rotate(10deg);
+      }
+    }
+
+    /* Floating Icons */
+    .floating-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-icon {
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.2;
+      animation: float-icon 6s ease-in-out infinite;
+    }
+
+    .floating-icon:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      font-size: 2.5rem;
+    }
+
+    .floating-icon:nth-child(2) {
+      top: 60%;
+      right: 10%;
+      animation-delay: 1s;
+      font-size: 2.8rem;
+    }
+
+    .floating-icon:nth-child(3) {
+      top: 15%;
+      right: 15%;
+      animation-delay: 2s;
+      font-size: 2.2rem;
+    }
+
+    .floating-icon:nth-child(4) {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 1.5s;
+      font-size: 2.6rem;
+    }
+
+    .schedule-item {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .schedule-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .schedule-item:hover {
+      padding-left: 15px;
+      border-left: 4px solid #DC143C;
+    }
+
+    .item-time {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #DC143C;
+      margin-bottom: 8px;
+    }
+
+    .item-label {
+      font-size: 0.75rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .item-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .item-description {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .item-location {
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Action Buttons */
+    .schedule-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 50px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-schedule {
+      padding: 14px 40px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, #DC143C, #E74C3C);
+      color: white;
+    }
+
+    .btn-download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(220, 20, 60, 0.35);
+    }
+
+    .btn-register {
+      background: #FFD700;
+      color: #1a1a1a;
+    }
+
+    .btn-register:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.35);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .schedule-card-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .schedule-left {
+        padding: 40px;
+      }
+
+      .schedule-date-number {
+        font-size: 3.5rem;
+      }
+
+      .schedule-right {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .schedule-hero {
+        padding: 60px 0;
+        margin-top: 100px;
+      }
+
+      .schedule-hero h1 {
+        font-size: 2rem;
+      }
+
+      .schedule-hero p {
+        font-size: 1rem;
+      }
+
+      .schedule-wrapper {
+        margin: 40px auto;
+      }
+
+      .schedule-left {
+        padding: 30px;
+      }
+
+      .schedule-date-number {
+        font-size: 3rem;
+      }
+
+      .schedule-date-month {
+        font-size: 1.8rem;
+      }
+
+      .schedule-right {
+        padding: 30px;
+      }
+
+      .schedule-tabs {
+        gap: 8px;
+      }
+
+      .tab-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+
+      .item-time {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .schedule-hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .schedule-left {
+        padding: 25px;
+      }
+
+      .schedule-date-number {
+        font-size: 2.5rem;
+      }
+
+      .schedule-date-month {
+        font-size: 1.3rem;
+      }
+
+      .schedule-right {
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      .schedule-tabs {
+        gap: 6px;
+        margin-bottom: 30px;
+      }
+
+      .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+      }
+
+      .item-time {
+        font-size: 1.2rem;
+      }
+
+      .item-title {
+        font-size: 1rem;
+      }
+
+      .schedule-actions {
+        flex-direction: column;
+      }
+
+      .btn-schedule {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="assets/logos/logo.png" alt="HOPECON">
+        </div>
+        <button class="navbar-toggle" id="navbarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Why Join</a></li>
+          <li><a href="index.html#committee">Committee</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="schedule.html" class="active">Schedule</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html" class="btn btn-primary btn-sm">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== SCHEDULE HERO ===== -->
+  <section class="schedule-hero">
+    <div class="floating-icons">
+      <div class="floating-icon">📅</div>
+      <div class="floating-icon">🎤</div>
+      <div class="floating-icon">👥</div>
+      <div class="floating-icon">🏆</div>
+    </div>
+    <div class="container">
+      <h1>Event Schedule</h1>
+      <p>Comprehensive three-day program designed for maximum learning and networking</p>
+    </div>
+  </section>
+
+  <!-- ===== SCHEDULE CONTENT ===== -->
+  <div class="schedule-wrapper">
+    <div class="schedule-card-container">
+      <!-- Left Side - Date -->
+      <div class="schedule-left">
+        <div class="schedule-date">
+          <div class="schedule-date-month">JUNE</div>
+          <div class="schedule-date-number">27-29</div>
+        </div>
+        <div class="schedule-title">EVENT SCHEDULE</div>
+        <div class="schedule-description">
+          Join us for three days of comprehensive medical excellence, featuring 800+ expert faculties and 300+ sessions across 37+ medical fraternities.
+        </div>
+      </div>
+
+      <!-- Right Side - Schedule Items -->
+      <div class="schedule-right">
+        <!-- Tab Navigation -->
+        <div class="schedule-tabs">
+          <button class="tab-btn active" onclick="switchDay('day1')">📅 Day 1: June 27</button>
+          <button class="tab-btn" onclick="switchDay('day2')">📅 Day 2: June 28</button>
+          <button class="tab-btn" onclick="switchDay('day3')">📅 Day 3: June 29</button>
+        </div>
+
+        <!-- Schedule Items Container -->
+        <div class="schedule-items">
+          <!-- Day 1 -->
+          <div id="day1" class="schedule-day active">
+            <div class="schedule-item">
+              <div class="item-label">Opening</div>
+              <div class="item-time">09:00</div>
+              <div class="item-title">Opening Ceremony</div>
+              <div class="item-description">Formal inauguration of HOPECON 2025 with welcome address from the organizing committee</div>
+              <div class="item-location">📍 Main Auditorium</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Keynote</div>
+              <div class="item-time">10:00</div>
+              <div class="item-title">Keynote Address</div>
+              <div class="item-description">Distinguished medical leader delivers keynote on "Future of Comprehensive Healthcare"</div>
+              <div class="item-location">📍 Main Auditorium</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Sessions</div>
+              <div class="item-time">11:00</div>
+              <div class="item-title">Symposia & Scientific Session 1</div>
+              <div class="item-description">Parallel sessions across 8 different medical specialties with expert faculty</div>
+              <div class="item-location">📍 Multiple Halls</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Break</div>
+              <div class="item-time">12:30</div>
+              <div class="item-title">Lunch Break</div>
+              <div class="item-description">Networking lunch with refreshments and exhibition viewing</div>
+              <div class="item-location">📍 Dining Hall</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Workshops</div>
+              <div class="item-time">13:30</div>
+              <div class="item-title">Live Workshops</div>
+              <div class="item-description">Interactive hands-on workshops with practical demonstrations (Limited seats)</div>
+              <div class="item-location">📍 Workshop Halls</div>
+            </div>
+          </div>
+
+          <!-- Day 2 -->
+          <div id="day2" class="schedule-day">
+            <div class="schedule-item">
+              <div class="item-label">Sessions</div>
+              <div class="item-time">09:00</div>
+              <div class="item-title">Scientific Session 2</div>
+              <div class="item-description">Advanced sessions featuring latest research and clinical innovations</div>
+              <div class="item-location">📍 Main Auditorium & Halls</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Break</div>
+              <div class="item-time">10:30</div>
+              <div class="item-title">Tea Break</div>
+              <div class="item-description">Networking refreshment break with interactive exhibitions</div>
+              <div class="item-location">📍 Foyer</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Discussions</div>
+              <div class="item-time">11:00</div>
+              <div class="item-title">Case Discussions & Debates</div>
+              <div class="item-description">Interactive case presentations with expert commentary and Q&A sessions</div>
+              <div class="item-location">📍 Multiple Halls</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Break</div>
+              <div class="item-time">12:30</div>
+              <div class="item-title">Lunch Break</div>
+              <div class="item-description">Lunch with exhibition browsing and networking opportunities</div>
+              <div class="item-location">📍 Dining Hall</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Competition</div>
+              <div class="item-time">13:30</div>
+              <div class="item-title">Competitions Round 1</div>
+              <div class="item-description">Paper presentations, Poster presentations, and Medical Writing competitions</div>
+              <div class="item-location">📍 Competition Halls</div>
+            </div>
+          </div>
+
+          <!-- Day 3 -->
+          <div id="day3" class="schedule-day">
+            <div class="schedule-item">
+              <div class="item-label">Sessions</div>
+              <div class="item-time">09:00</div>
+              <div class="item-title">Scientific Session 3</div>
+              <div class="item-description">Final key sessions with international and national faculty</div>
+              <div class="item-location">📍 Main Auditorium & Halls</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Break</div>
+              <div class="item-time">10:30</div>
+              <div class="item-title">Tea Break</div>
+              <div class="item-description">Final networking break with last chance for interactions</div>
+              <div class="item-location">📍 Foyer</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Finals</div>
+              <div class="item-time">11:00</div>
+              <div class="item-title">Competitions Final Round</div>
+              <div class="item-description">Final rounds and results announcement for all competitions</div>
+              <div class="item-location">📍 Main Auditorium</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Break</div>
+              <div class="item-time">12:30</div>
+              <div class="item-title">Lunch Break</div>
+              <div class="item-description">Final lunch and networking with delegates</div>
+              <div class="item-location">📍 Dining Hall</div>
+            </div>
+
+            <div class="schedule-item">
+              <div class="item-label">Closing</div>
+              <div class="item-time">14:00</div>
+              <div class="item-title">Awards & Closing Ceremony</div>
+              <div class="item-description">Presentation of certificates, awards, CME credits, and formal closing</div>
+              <div class="item-location">📍 Main Auditorium</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="schedule-actions">
+          <button class="btn-schedule btn-download" onclick="downloadSchedule()">📥 Download Schedule</button>
+          <a href="#" onclick="openRegisterModal(event)" class="btn-schedule btn-register">✓ Register Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>HOPECON 2025</h4>
+          <p>A comprehensive platform for clinical medicine excellence, featuring 800+ expert faculties, 300+ sessions, and 37+ medical fraternities.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#committee">Committee</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><strong>Phone:</strong> +91-8100881622</p>
+          <p><strong>Email:</strong> helpdesk@knfunihealth.com</p>
+          <p><strong>Location:</strong> ITC Royal Bengal<br>Kolkata, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOPECON. All rights reserved. Organized by Kolkata Nurture Foundation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    function switchDay(day) {
+      // Hide all schedule days
+      document.querySelectorAll('.schedule-day').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      // Remove active class from all buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show selected day
+      document.getElementById(day).classList.add('active');
+
+      // Add active class to clicked button
+      event.target.closest('.tab-btn').classList.add('active');
+    }
+
+    function downloadSchedule() {
+      alert('Schedule PDF will be available for download soon!\n\nFor now, you can take screenshots or connect with us at helpdesk@knfunihealth.com');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOPECON 2025 - Medical Conference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <div class="navbar-logo">
+          <img src="assets/logos/logo.png" alt="HOPECON">
+        </div>
+        <button class="navbar-toggle" id="navbarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="navbar-menu" id="navbarMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Why Join</a></li>
+          <li><a href="#committee">Committee</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html" class="btn btn-primary btn-sm">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <!-- Floating decorative shapes -->
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <h1>HOPECON 2025</h1>
+        <p>Comprehensive Healthcare - The Complete Care</p>
+        <p>June 27-29, 2025 | ITC Royal Bengal, Kolkata</p>
+
+        <div class="countdown" id="countdown">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="register.html" class="btn btn-primary">Register Now</a>
+          <a href="#about" class="btn btn-secondary">Explore More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why <span style="color: var(--primary-red); font-style: italic;">Join</span> HOPECON?</h2>
+        <p>Here's why medical professionals choose us for comprehensive healthcare education:</p>
+      </div>
+
+      <div class="features-container">
+        <!-- Feature Card 1 -->
+        <div class="feature-card card-1">
+          <div class="card-dot dot-yellow"></div>
+          <div class="card-icon icon-1">✦</div>
+          <h3>Maiden Medicare Megashow</h3>
+          <p>One of its kind, first time in India - multidisciplinary, cross-subject communicating, completely need-based and practice-oriented.</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="feature-card card-2">
+          <div class="card-dot dot-purple"></div>
+          <div class="card-icon icon-2">◆</div>
+          <h3>Hand-Picked Faculties</h3>
+          <p>Stalwarts from all subjects, exclusively handpicked based on their excellence, experience and interest in their topic.</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="feature-card card-3">
+          <div class="card-dot dot-pink"></div>
+          <div class="card-icon icon-3">●</div>
+          <h3>Science Made Easy</h3>
+          <p>Pearls of medical science presented in a fashion of easy understandability with scope for involved dialogues.</p>
+        </div>
+
+        <!-- Feature Card 4 -->
+        <div class="feature-card card-4">
+          <div class="card-dot dot-blue"></div>
+          <div class="card-icon icon-4">◆</div>
+          <h3>National Networking</h3>
+          <p>Interact with individuals from all over the nation with varied backgrounds. Potential for personal and professional growth.</p>
+        </div>
+
+        <!-- Feature Card 5 -->
+        <div class="feature-card card-5">
+          <div class="card-dot dot-red"></div>
+          <div class="card-icon icon-5">✦</div>
+          <h3>Updated & Unique</h3>
+          <p>Recent advancements, updated guidelines, therapeutic case discussions, and need-of-the-hour topics covered.</p>
+        </div>
+
+        <!-- Feature Card 6 -->
+        <div class="feature-card card-6">
+          <div class="card-dot dot-orange"></div>
+          <div class="card-icon icon-6">●</div>
+          <h3>Continued Medical Education</h3>
+          <p>Join our community of academicians and get access to courses, CME credits, research papers, and medical bulletins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section class="section-alt" id="features">
+    <img src="assets/hero_area/hero_docotr.webp" alt="Medical Professional" class="hero-doctor-image" loading="lazy">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Conference Features</span>
+        <h2>What's Included</h2>
+      </div>
+
+      <div class="row two-col">
+        <div>
+          <h3>Competitions with Awards</h3>
+          <ul style="list-style: none; margin-top: 1.5rem;">
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Paper Presentation</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Poster Presentation</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Medical Writing</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Medical Debate</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Mediquiz</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Health Awareness Painting</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Coverage & Topics</h3>
+          <ul style="list-style: none; margin-top: 1.5rem;">
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>37+ Medical Fraternities</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Digital Healthcare</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Medico-Legal Issues</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Modern Medical Research</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Global Healthcare Opportunities</span>
+            </li>
+            <li style="padding: 0.6rem 0; display: flex; align-items: center;">
+              <span style="color: #DC143C; margin-right: 0.8rem; font-weight: 700; font-size: 1.2rem;">✓</span>
+              <span>Healthcare Entrepreneurship</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORGANIZATIONAL COMMITTEE SECTION ===== -->
+  <section id="committee">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Leadership</span>
+        <h2>Meet Our Organizing Committee</h2>
+        <p>Distinguished medical professionals leading HOPECON 2025</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 60px;">
+        <div class="card">
+          <img src="assets/committee/dr-profile1.jpg" alt="Committee Lead">
+          <div>
+            <h4>Dr. Committee Lead</h4>
+            <p>Organizing President</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/committee/dr-profile2.jpg" alt="Committee Member">
+          <div>
+            <h4>Dr. Committee Member</h4>
+            <p>Organizing Secretary</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/committee/dr-profile3.jpg" alt="Committee Member">
+          <div>
+            <h4>Dr. Committee Member</h4>
+            <p>Treasurer</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="assets/committee/dr-profile4.jpg" alt="Committee Member">
+          <div>
+            <h4>Dr. Committee Member</h4>
+            <p>Convenor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS SECTION ===== -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">By The Numbers</span>
+        <h2>HOPECON 2025 Impact</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">37+</span>
+          <span class="stat-label">Medical Fraternities</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">800+</span>
+          <span class="stat-label">Expert Faculties</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Sessions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">70+</span>
+          <span class="stat-label">Case Discussions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Live Workshops</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">12+</span>
+          <span class="stat-label">Symposia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING SECTION ===== -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Pricing Plans</span>
+        <h2>Book Your Seat</h2>
+        <p>Choose the option that suits you best</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🌐</div>
+          <h3 class="pricing-title">Virtual Attendance</h3>
+          <p class="pricing-subtitle">Join via Zoom from anywhere</p>
+          <div class="pricing-price"><span>₹</span>2,500</div>
+          <ul class="pricing-features">
+            <li>Full access to all sessions</li>
+            <li>Join from anywhere</li>
+            <li>Participation certificate</li>
+            <li>Networking via Zoom</li>
+            <li>No eligibility required</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary">Register Now</a>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div style="font-size: 2rem; margin-bottom: 8px;">🏢</div>
+          <h3 class="pricing-title">Physical Attendance</h3>
+          <p class="pricing-subtitle">Live at ITC Royal Bengal</p>
+          <div class="pricing-price"><span>₹</span>4,000</div>
+          <ul class="pricing-features">
+            <li>Access to all scientific halls</li>
+            <li>Exhibition area access</li>
+            <li>Networking opportunities</li>
+            <li>Participation certificate</li>
+            <li>Meals & refreshments</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary">Register Now</a>
+        </div>
+
+        <div class="pricing-card">
+          <div style="font-size: 2rem; margin-bottom: 8px;">⭐</div>
+          <h3 class="pricing-title">Faculty Pass</h3>
+          <p class="pricing-subtitle">For faculty members</p>
+          <div class="pricing-price"><span>₹</span>3,500</div>
+          <ul class="pricing-features">
+            <li>Speaking opportunities</li>
+            <li>VIP networking area</li>
+            <li>Priority seating</li>
+            <li>Unlimited refreshments</li>
+            <li>CME credits eligible</li>
+          </ul>
+          <a href="register.html" class="btn btn-primary">Register Now</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="color: #666; margin-bottom: 1rem;">⭐ Early bird rates available until June 10, 2025</p>
+        <p style="color: #666; font-size: 0.95rem;">All prices inclusive of taxes</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="section-alt" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Previous Events</span>
+        <h2>Gallery</h2>
+        <p>Moments from HOPECON conferences</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery1.jpg" alt="Gallery 1">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery2.jpg" alt="Gallery 2">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery3.jpg" alt="Gallery 3">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery4.jpg" alt="Gallery 4">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery5.jpg" alt="Gallery 5">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery/gallery6.jpg" alt="Gallery 6">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCHEDULE SECTION ===== -->
+  <section id="schedule">
+    <div class="container">
+      <div class="section-title">
+        <span class="subtitle">Event Schedule</span>
+        <h2>Three Days of Excellence</h2>
+      </div>
+
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h3>Day 1: June 27</h3>
+          <p style="margin-bottom: 1rem; color: #666; font-weight: 500;">Friday</p>
+          <ul>
+            <li><span>9:00 AM</span> <span>Opening Ceremony</span></li>
+            <li><span>10:00 AM</span> <span>Keynote Address</span></li>
+            <li><span>11:30 AM</span> <span>Symposia Begin</span></li>
+            <li><span>1:00 PM</span> <span>Lunch</span></li>
+            <li><span>2:30 PM</span> <span>Workshops</span></li>
+            <li><span>6:00 PM</span> <span>Networking</span></li>
+          </ul>
+          <a href="schedule.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; display: inline-block;">View Full Schedule</a>
+        </div>
+
+        <div class="schedule-card">
+          <h3>Day 2 & 3: June 28-29</h3>
+          <p style="margin-bottom: 1rem; color: #666; font-weight: 500;">Saturday & Sunday</p>
+          <ul>
+            <li><span>9:00 AM</span> <span>Scientific Sessions</span></li>
+            <li><span>10:30 AM</span> <span>Case Discussions</span></li>
+            <li><span>12:30 PM</span> <span>Competitions</span></li>
+            <li><span>2:00 PM</span> <span>Lunch Break</span></li>
+            <li><span>3:00 PM</span> <span>Live Workshops</span></li>
+            <li><span>5:00 PM</span> <span>Awards & Closing</span></li>
+          </ul>
+          <a href="schedule.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; display: inline-block;">View Full Schedule</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== REGISTER MODAL ===== -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeRegisterModal()">✕</button>
+      <h2 class="modal-title">Register for HOPECON 2025</h2>
+
+      <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+        <div class="form-group">
+          <label for="regName">Full Name *</label>
+          <input type="text" id="regName" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regEmail">Email *</label>
+            <input type="email" id="regEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Phone *</label>
+            <input type="tel" id="regPhone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regCategory">Registration Type *</label>
+          <select id="regCategory" required>
+            <option value="">-- Select Type --</option>
+            <option value="virtual">Virtual Attendance</option>
+            <option value="physical">Physical Attendance</option>
+            <option value="faculty">Faculty Pass</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="regQualification">Qualification/Specialty</label>
+          <input type="text" id="regQualification" placeholder="e.g., MBBS, MD Cardiology">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Complete Registration</button>
+      </form>
+
+      <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;">
+        You'll receive confirmation via email
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>HOPECON 2025</h4>
+          <p>A comprehensive platform for clinical medicine excellence, featuring 800+ expert faculties, 300+ sessions, and 37+ medical fraternities.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#committee">Committee</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Important</h4>
+          <ul>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><strong>Phone:</strong> +91-8100881622</p>
+          <p><strong>Email:</strong> helpdesk@knfunihealth.com</p>
+          <p><strong>Location:</strong> ITC Royal Bengal<br>Kolkata, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 HOPECON. All rights reserved. Organized by Kolkata Nurture Foundation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Animate stats numbers on scroll
+    const animateNumbers = () => {
+      const statNumbers = document.querySelectorAll('.stat-number');
+
+      const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            entry.target.classList.add('animated');
+            const number = entry.target.textContent;
+            const finalValue = parseInt(number);
+            let currentValue = 0;
+
+            const duration = 2000; // 2 seconds
+            const increment = finalValue / (duration / 50);
+            const interval = setInterval(() => {
+              currentValue += increment;
+              if (currentValue >= finalValue) {
+                entry.target.textContent = number;
+                clearInterval(interval);
+              } else {
+                entry.target.textContent = Math.ceil(currentValue) + (number.includes('+') ? '+' : '');
+              }
+            }, 50);
+          }
+        });
+      }, observerOptions);
+
+      statNumbers.forEach(number => observer.observe(number));
+    };
+
+    document.addEventListener('DOMContentLoaded', animateNumbers);
+  </script>
+</body>
+</html>
