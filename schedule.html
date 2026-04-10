@@ -433,59 +433,25 @@
 
     @media (max-width: 768px) {
       .schedule-hero {
-        padding: 60px 0;
-        margin-top: 100px;
+        padding: 50px 0;
+        margin-top: 96px;
       }
 
       .schedule-hero h1 {
-        font-size: 2rem;
+        font-size: 1.9rem;
       }
 
       .schedule-hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
       }
 
       .schedule-wrapper {
-        margin: 40px auto;
+        margin: 28px auto;
       }
 
       .schedule-left {
-        padding: 30px;
-      }
-
-      .schedule-date-number {
-        font-size: 3rem;
-      }
-
-      .schedule-date-month {
-        font-size: 1.8rem;
-      }
-
-      .schedule-right {
-        padding: 30px;
-      }
-
-      .schedule-tabs {
-        gap: 8px;
-      }
-
-      .tab-btn {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-      }
-
-      .item-time {
-        font-size: 1.3rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .schedule-hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .schedule-left {
-        padding: 25px;
+        padding: 24px;
+        border-radius: 16px;
       }
 
       .schedule-date-number {
@@ -493,38 +459,166 @@
       }
 
       .schedule-date-month {
-        font-size: 1.3rem;
+        font-size: 1.35rem;
       }
 
       .schedule-right {
+        padding: 24px;
+        border-radius: 16px;
+      }
+
+      .schedule-tabs {
+        gap: 8px;
+        margin-bottom: 26px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+      }
+
+      .tab-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+
+      .item-time {
+        font-size: 1.15rem;
+      }
+
+      .item-label {
+        font-size: 0.68rem;
+      }
+
+      .item-title {
+        font-size: 0.98rem;
+      }
+
+      .item-description {
+        font-size: 0.88rem;
+      }
+
+      .item-location {
+        font-size: 0.8rem;
+      }
+
+      .schedule-item {
+        margin-bottom: 22px;
+        padding-bottom: 22px;
+      }
+
+      .schedule-actions {
+        margin-top: 32px;
+        gap: 10px;
+      }
+
+      .btn-schedule {
+        padding: 10px 22px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .schedule-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .schedule-left {
         padding: 20px;
+      }
+
+      .schedule-date-number {
+        font-size: 2.2rem;
+      }
+
+      .schedule-date-month {
+        font-size: 1.15rem;
+      }
+
+      .schedule-right {
+        padding: 18px;
         border-radius: 15px;
       }
 
       .schedule-tabs {
         gap: 6px;
-        margin-bottom: 30px;
+        margin-bottom: 22px;
       }
 
       .tab-btn {
-        padding: 8px 12px;
-        font-size: 0.8rem;
+        padding: 7px 12px;
+        font-size: 0.72rem;
       }
 
       .item-time {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
       }
 
       .item-title {
-        font-size: 1rem;
+        font-size: 0.92rem;
+      }
+
+      .item-description {
+        font-size: 0.82rem;
+      }
+
+      .item-location {
+        font-size: 0.76rem;
       }
 
       .schedule-actions {
         flex-direction: column;
+        margin-top: 26px;
       }
 
       .btn-schedule {
         width: 100%;
+        padding: 10px 16px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .schedule-hero {
+        padding: 42px 0;
+      }
+
+      .schedule-hero h1 {
+        font-size: 1.45rem;
+      }
+
+      .schedule-hero p {
+        font-size: 0.88rem;
+      }
+
+      .schedule-date-number {
+        font-size: 1.95rem;
+      }
+
+      .schedule-date-month {
+        font-size: 1rem;
+      }
+
+      .schedule-right,
+      .schedule-left {
+        padding: 16px;
+      }
+
+      .tab-btn {
+        padding: 7px 10px;
+        font-size: 0.68rem;
+      }
+
+      .item-time {
+        font-size: 0.98rem;
+      }
+
+      .item-title {
+        font-size: 0.88rem;
+      }
+
+      .item-description,
+      .item-location {
+        font-size: 0.78rem;
       }
     }
   </style>
